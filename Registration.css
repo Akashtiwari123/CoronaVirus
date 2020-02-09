@@ -1,0 +1,31 @@
+th{
+     color: black;
+    background-color: rgb(222, 229, 233);
+}
+table{
+    background-color: rgb(222, 229, 233);
+    font-size: 20px;
+    text-align: center;
+    
+}
+
+
+.list{
+    width:100%;
+    height:40px;
+    border-top: 0.5px;
+    border-bottom: 0.5px;
+    background-color: rgb(223, 215, 223);
+  }
+
+  
+  .bt{
+    background-color: #282c34;
+    border:none;
+    color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  cursor: pointer;
+  }

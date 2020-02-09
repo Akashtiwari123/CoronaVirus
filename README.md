@@ -1,2 +1,0 @@
-# CoronaVirus
-Created with CodeSandbox
