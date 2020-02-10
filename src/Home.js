@@ -94,7 +94,7 @@ class Home extends Component {
         <main>
           <div style={{ marginTop: "20px", marginBottom: "20px" }}>
             <h3 style={{ borderBottom: "0.25px solid", float: "left" }}>
-              Online Registraion <img src={addUser} alt="adduser" />
+              Online Registration <img src={addUser} alt="adduser" />
               <img src={icon} alt="icon" />
             </h3>
 
