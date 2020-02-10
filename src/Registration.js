@@ -36,7 +36,7 @@ class Registration extends React.Component {
           >
             Home
           </button>
-          <div style={{ marginLeft: "500px" }}>
+          <div style={{ marginLeft: "400px" }}>
             {" "}
             <font>
               <img src={logo} alt="logo" />
@@ -56,7 +56,6 @@ class Registration extends React.Component {
           >
             Logout
           </button>
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
         </header>
 
         <main>

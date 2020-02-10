@@ -72,13 +72,13 @@ class Home extends Component {
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" />
           <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js" />
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" />
-          <div style={{ marginLeft: "500px" }}>
+          <div style={{ marginLeft: "450px" }}>
             {" "}
             <img src={logo} alt="logo" />
             <font>CoronaVirus </font>{" "}
           </div>
 
-          <font style={{ marginLeft: "300px", marginTop: "30px" }}>
+          <font style={{ marginLeft: "210px", marginTop: "30px" }}>
             Welcome, {this.props.location.state.user}
           </font>
           <button
@@ -237,7 +237,8 @@ class Home extends Component {
           </div>
           <div className="list">
             <font style={{ marginRight: "1000px", fontSize: "20px" }}>
-              <img src={listIcon} alt="Listicon" />CoronaVirus API Data Samples{" "}
+              <img src={listIcon} alt="Listicon" />
+              CoronaVirus API Data Samples{" "}
             </font>
           </div>
           {list}

@@ -1,11 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import "./Layout.css";
-import { Route } from "react-router-dom";
 import user from "./login.png";
-import Home from "./Home";
-import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
 import logo from "./icons8-virus-96.png";
 
 class Login extends Component {
