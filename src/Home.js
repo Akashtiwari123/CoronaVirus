@@ -19,6 +19,7 @@ class Home extends Component {
     query: "",
     pan: "No",
     aadhaar: "No",
+
     user: this.props.location.state.user
   };
   componentDidMount() {
@@ -53,7 +54,8 @@ class Home extends Component {
       profession: "",
       pan: "No",
       aadhaar: "No",
-      query: ""
+      query: "",
+      user: this.props.location.state.user
     });
   };
   render() {
