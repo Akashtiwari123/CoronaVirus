@@ -5,7 +5,6 @@ import ApiData from "./ApiData";
 import addUser from "./icons8-add-user-male-50.png";
 import icon from "./icons8-thick-long-right-arrow-64.png";
 import listIcon from "./icons8-list-50.png";
-import Registraion from "./Registration";
 import { withRouter } from "react-router-dom";
 import logo from "./icons8-virus-96.png";
 

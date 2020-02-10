@@ -17,8 +17,7 @@ class Login extends Component {
   };
 
   loginHandler = () => {
-    if (this.state.username === "admin" && this.state.password === "admin") {
-      // this.props.onClickVal();
+    if (this.state.username === "Admin" && this.state.password === "admin") {
       return this.props.history.push({
         pathname: "/home",
         state: { user: this.state.username }
@@ -44,7 +43,6 @@ class Login extends Component {
             <img src={logo} alt="logo" />
             CoronaVirus
           </div>
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
         </header>
         <main>
           <center>
