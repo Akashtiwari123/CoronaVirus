@@ -397,13 +397,16 @@ class Home extends Component {
           <button className="hbtn" onClick={this.onHandleApi}>
             Data
           </button>
-          <div style={{ marginLeft: "250px" }}>
+          <a href="/home" style={{ textDecoration: "none" }}>
             {" "}
-            <img src={logo} alt="logo" />
-            <font>CoronaVirus </font>{" "}
-          </div>
-
-          <font style={{ marginLeft: "210px", marginTop: "30px" }}>
+            <div style={{ marginLeft: "200px" }}>
+              <img src={logo} alt="logo" />
+              <font>CoronaVirus </font>{" "}
+            </div>
+          </a>
+          <font
+            style={{ marginLeft: "180px", marginTop: "30px", fontSize: "22px" }}
+          >
             Welcome, {this.props.location.state.user}
           </font>
           <button

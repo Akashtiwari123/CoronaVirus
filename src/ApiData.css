@@ -3,9 +3,13 @@
   margin: 45px;
   border: 0.5px solid;
   color: rgb(18, 19, 18);
-  background-color: #586a7e;
+  background-color: #dfebde;
   width: 300px;
   box-shadow: 0px 1px 2px 2px #aaa1a1;
   display: inline-table;
   border-radius: 20px;
+}
+
+.im {
+  border-radius: 10%;
 }
