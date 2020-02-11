@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "./App.css";
-import "./Layout.css";
-import user from "./login.png";
-import logo from "./icons8-virus-96.png";
+import "../App.css";
+import "./../component/Layout/Layout.css";
+import user from "./../asset/Images/login.png";
+import logo from "./../asset/Images/icons8-virus-96.png";
 
 class Login extends Component {
   state = {

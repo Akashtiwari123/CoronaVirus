@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import "./Home.css";
 import axios from "axios";
-import ApiData from "./ApiData";
-import addUser from "./icons8-add-user-male-50.png";
-import icon from "./icons8-thick-long-right-arrow-64.png";
-import listIcon from "./icons8-list-50.png";
+import ApiData from "../../component/ApiData/ApiData";
+import addUser from "../../asset/Images/icons8-add-user-male-50.png";
+import icon from "../../asset/Images/icons8-thick-long-right-arrow-64.png";
+import listIcon from "../../asset/Images/icons8-list-50.png";
 import { withRouter } from "react-router-dom";
-import logo from "./icons8-virus-96.png";
+import logo from "../../asset/Images/icons8-virus-96.png";
 
 class Home extends Component {
   state = {

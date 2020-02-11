@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import "./Registration.css";
-import logo from "./icons8-virus-96.png";
+import logo from "../../asset/Images/icons8-virus-96.png";
 
 class Registration extends React.Component {
   state = {
