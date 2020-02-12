@@ -7,6 +7,7 @@ import icon from "../../asset/Images/icons8-thick-long-right-arrow-64.png";
 import listIcon from "../../asset/Images/icons8-list-50.png";
 import { withRouter } from "react-router-dom";
 import logo from "../../asset/Images/icons8-virus-96.png";
+import { connect } from "react-redux";
 
 class Home extends Component {
   state = {
@@ -15,20 +16,21 @@ class Home extends Component {
     data: [],
     firstName: "",
     lastName: "",
-    gender: "Male",
+    gender: "",
     age: "",
     profession: "",
     query: "",
     pan: "No",
-    aadhaar: "No",
-    user: this.props.location.state.user
+    aadhaar: "No"
+    // user: this.props.location.state.user
   };
   componentDidMount() {
     let fetchData = [];
     axios.get("https://jsonplaceholder.typicode.com/photos").then(resp => {
       for (let i = 0; i < 6; i++) {
         fetchData.push({
-          ...resp.data[i]
+          ...resp.data[i],
+          key: resp.data[i].id
         });
       }
       this.setState({ data: fetchData });
@@ -56,7 +58,7 @@ class Home extends Component {
     this.setState({
       firstName: "",
       lastName: "",
-      gender: "Male",
+      gender: "",
       age: "",
       profession: "",
       pan: "No",
@@ -66,7 +68,7 @@ class Home extends Component {
   };
   render() {
     const list = this.state.data.map(k => {
-      return <ApiData title={k.title} url={k.thumbnailUrl} />;
+      return <ApiData title={k.title} url={k.thumbnailUrl} key={k.id} />;
     });
 
     let homepage = null;
@@ -108,9 +110,9 @@ class Home extends Component {
               width="560"
               height="475"
               src="https://www.youtube.com/embed/qF42gZVm1Bo"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen=""
+              allowFullScreen=""
               className="frame"
             >
               &nbsp;
@@ -126,7 +128,7 @@ class Home extends Component {
           <div className="lists">
             <font style={{ marginRight: "1000px", fontSize: "20px" }}>
               <img src={listIcon} alt="Listicon" />
-              CoronaVirus API Data{" "}
+              CoronaVirus API Data
             </font>
           </div>
           {list}
@@ -147,7 +149,7 @@ class Home extends Component {
               We'll never share your details with anyone else.
             </small>
             <div className="form-group">
-              <label for="exampleInputEmail1">First Name</label>
+              <label htmlFor="exampleInputEmail1">First Name</label>
               <input
                 type="text"
                 name="firstName"
@@ -158,7 +160,7 @@ class Home extends Component {
               />
             </div>
             <div className="form-group">
-              <label for="exampleInputPassword1">Last Name</label>
+              <label htmlFor="exampleInputPassword1">Last Name</label>
               <input
                 type="text"
                 name="lastName"
@@ -169,7 +171,7 @@ class Home extends Component {
               />
             </div>
             <div className="form-group">
-              <label for="exampleInputPassword1">Age</label>
+              <label htmlFor="exampleInputPassword1">Age</label>
               <input
                 type="Number"
                 name="age"
@@ -179,38 +181,37 @@ class Home extends Component {
                 placeholder="Enter Age"
               />
             </div>
-            <div class="form-check form-check-inline">
-              <label for="exampleInputPassword1">
+            <div className="form-check form-check-inline">
+              <label htmlFor="exampleInputPassword1">
                 Gender &nbsp;&nbsp;&nbsp;
               </label>
               <input
-                class="form-check-input"
+                className="form-check-input"
                 onChange={event => this.onHandleChange(event)}
                 type="radio"
                 name="gender"
                 id="exampleRadios1"
                 value="Male"
-                checked
               />
-              <label class="form-check-label" for="exampleRadios1">
+              <label className="form-check-label" htmlFor="exampleRadios1">
                 Male
               </label>
               &nbsp;
               <input
-                class="form-check-input"
+                className="form-check-input"
                 onChange={event => this.onHandleChange(event)}
                 type="radio"
                 name="gender"
                 id="exampleRadios2"
                 value="Female"
               />
-              <label class="form-check-label" for="exampleRadios2">
+              <label className="form-check-label" htmlFor="exampleRadios2">
                 Female
               </label>
             </div>
             <hr />
             <div className="form-group">
-              <label for="exampleFormControlSelect1">Occupation</label>
+              <label htmlFor="exampleFormControlSelect1">Occupation</label>
               <select
                 className="form-control"
                 id="exampleFormControlSelect1"
@@ -225,36 +226,36 @@ class Home extends Component {
                 <option value="Others">Others</option>
               </select>
             </div>
-            <div class="form-check">
+            <div className="form-check">
               <input
-                class="form-check-input"
+                className="form-check-input"
                 type="checkbox"
                 name="pan"
                 value="Yes"
                 onClick={event => this.onHandleChange(event)}
                 id="defaultCheck1"
               />
-              <label class="form-check-label" for="defaultCheck1">
+              <label className="form-check-label" htmlFor="defaultCheck1">
                 Do you have Pan Card ?
               </label>
             </div>
-            <div class="form-check">
+            <div className="form-check">
               <input
-                class="form-check-input"
+                className="form-check-input"
                 type="checkbox"
                 name="aadhaar"
                 value="Yes"
                 onClick={event => this.onHandleChange(event)}
                 id="defaultCheck2"
               />
-              <label class="form-check-label" for="defaultCheck2">
+              <label className="form-check-label" htmlFor="defaultCheck2">
                 Do you have Aadhaar Card ?
               </label>
             </div>
-            <div class="form-group">
-              <label for="exampleFormControlTextarea1">Query ?</label>
+            <div className="form-group">
+              <label htmlFor="exampleFormControlTextarea1">Query ?</label>
               <textarea
-                class="form-control"
+                className="form-control"
                 onChange={event => this.onHandleChange(event)}
                 id="exampleFormControlTextarea1"
                 rows="3"
@@ -294,8 +295,7 @@ class Home extends Component {
           <button className="hbtn" onClick={this.onHandleApi}>
             Data
           </button>
-          <a href="/home" style={{ textDecoration: "none" }}>
-            {" "}
+          <a href="/home" style={{ textDecoration: "none", color: "white" }}>
             <div style={{ marginLeft: "200px" }}>
               <img src={logo} alt="logo" />
               <font>CoronaVirus </font>{" "}
@@ -304,7 +304,7 @@ class Home extends Component {
           <font
             style={{ marginLeft: "180px", marginTop: "30px", fontSize: "22px" }}
           >
-            Welcome, {this.props.location.state.user}
+            Welcome, {this.props.username}
           </font>
           <button
             className="bt"
@@ -326,5 +326,9 @@ class Home extends Component {
     );
   }
 }
-
-export default withRouter(Home);
+const mapStateToProps = state => {
+  return {
+    username: state.user
+  };
+};
+export default connect(mapStateToProps)(withRouter(Home));

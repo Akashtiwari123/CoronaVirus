@@ -3,6 +3,7 @@ import "../App.css";
 import "./../component/Layout/Layout.css";
 import user from "./../asset/Images/login.png";
 import logo from "./../asset/Images/icons8-virus-96.png";
+import { connect } from "react-redux";
 
 class Login extends Component {
   state = {
@@ -12,12 +13,11 @@ class Login extends Component {
 
   onChangeHandler = event => {
     this.setState({ [event.target.name]: event.target.value });
-    console.log(this.state.username);
-    console.log(this.state.password);
   };
 
   loginHandler = () => {
     if (this.state.username === "Admin" && this.state.password === "admin") {
+      this.props.handleUserName(this.state.username);
       return this.props.history.push({
         pathname: "/home",
         state: { user: this.state.username }
@@ -82,10 +82,28 @@ class Login extends Component {
             </form>
           </center>
         </main>
-        <div class="footer">Copyright 2020 - @CoronaVirus.com</div>
+        <div className="footer">Copyright 2020 - @CoronaVirus.com</div>
       </div>
     );
   }
 }
+const mapStateToProps = state => {
+  return {
+    usernaname: state.username
+  };
+};
+const mapDispatchToProps = dispatch => {
+  //console.log("Before Dispatch " + this.state.username);
+  return {
+    handleUserName: users =>
+      dispatch(
+        { type: "USER", username: users },
+        console.log("After Dispatch " + users)
+      )
+  };
+};
 
-export default Login;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Login);

@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import "./Registration.css";
 import logo from "../../asset/Images/icons8-virus-96.png";
+import { connect } from "react-redux";
 
 class Registration extends React.Component {
   state = {
@@ -12,8 +13,8 @@ class Registration extends React.Component {
     profession: this.props.location.state.profession,
     query: this.props.location.state.query,
     pan: this.props.location.state.pan,
-    aadhaar: this.props.location.state.aadhaar,
-    user: this.props.location.state.user
+    aadhaar: this.props.location.state.aadhaar
+    //user: this.props.location.state.user
   };
 
   render() {
@@ -44,7 +45,7 @@ class Registration extends React.Component {
 
           <font style={{ marginLeft: "210px", marginTop: "30px" }}>
             {" "}
-            Hello, {this.state.user}
+            Hello, {this.props.username}
           </font>
           <button
             className="bt"
@@ -60,7 +61,7 @@ class Registration extends React.Component {
           <div>
             <center>
               <form>
-                <table class="table table-dark">
+                <table className="table table-dark">
                   <tr>
                     <th colSpan="2">
                       <h3>Registration Details</h3>
@@ -131,4 +132,9 @@ class Registration extends React.Component {
   }
 }
 
-export default withRouter(Registration);
+const mapStaeToProps = state => {
+  return {
+    username: state.user
+  };
+};
+export default connect(mapStaeToProps)(withRouter(Registration));
